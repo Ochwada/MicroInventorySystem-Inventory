@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  # 🧩 Microservice 2: Inventory Service
+  inventory-service:
+    build:
+      context: .                      # Use current directory for build context
+      dockerfile: Dockerfile         # Use Dockerfile to build the Spring Boot app
+    container_name: inventory-service
+    ports:
+      - "9091:9091"                   # Expose app on port 9091
+    environment:
+      - SPRING_DATA_MONGODB_URI=${MONGODB_URI}  # Loaded from .env or environment
+    depends_on:
+      - mongo                        # Ensure MongoDB starts first
+    networks:
+      - backend
+
+  # 🍃 MongoDB Service
+  mongo:
+    image: mongo:6.0                 # Official MongoDB image
+    container_name: mongo
+    ports:
+      - "27017:27017"                # Expose MongoDB default port
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge

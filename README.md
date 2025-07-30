@@ -7,14 +7,21 @@ RESTful endpoints that allow other microservices—such as the Product Service�
 ensure availability before processing operations like order placement or stock checks.
 
 ## 📦 Features
-Create and initialize inventory for new products
+- Store inventory documents (productId + quantity) in MongoDB 
+- Retrieve stock quantity by productId 
+- RESTful endpoints using Spring Boot 
+- Clean architecture with DTOs and service layer 
+- Uses MongoDB as a NoSQL backend for scalability and flexibility
 
-Retrieve available stock quantity by product ID
-
-Update inventory after stock changes (optional for extensions)
-
-RESTful API with Spring Boot
-
-Clean separation of concerns using DTOs and service layers
-
-Easy integration with other services (e.g., Product, Order)
+## Tech Stack 
+| Technology              | Purpose                                   |
+|-------------------------|-------------------------------------------|
+| **Java 17+**            | Main language                             |
+| **Spring Boot**         | Application framework                     |
+| **Spring Web**          | RESTful API development                   |
+| **Spring Data MongoDB** | MongoDB integration for Spring            |
+| **Lombok**              | Boilerplate reduction                     |
+| **dotenv-java**         | Load environment variables from `.env`    |
+| **MongoDB**             | NoSQL database for inventory records      |
+| **Maven**               | Build and dependency management           |
+| **Docker**              | Containerization for service and database |
