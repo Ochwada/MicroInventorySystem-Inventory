@@ -33,7 +33,7 @@ public class InventoryServiceApplication {
         String[] envVars =
                 {
                        "PORT",
-                        "MONGODB_URI"
+                        "SPRING_DATA_MONGODB_URI"
                 };
         // Iterate through keys and set them as JVM system properties if found
         for (String key : envVars) {

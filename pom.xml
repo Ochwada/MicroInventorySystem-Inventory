@@ -15,7 +15,7 @@
     <packaging>jar</packaging>
 
     <name>inventory-service</name>
-    <url>http://maven.apache.org</url>
+
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -53,4 +53,14 @@
         </dependency>
 
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>

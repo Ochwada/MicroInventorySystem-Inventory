@@ -1,4 +1,4 @@
-version: '3.8'
+# version: '3.8'
 
 services:
   # 🧩 Microservice 2: Inventory Service
@@ -10,7 +10,8 @@ services:
     ports:
       - "9091:9091"                   # Expose app on port 9091
     environment:
-      - SPRING_DATA_MONGODB_URI=${MONGODB_URI}  # Loaded from .env or environment
+      - PORT=${PORT}
+      - SPRING_DATA_MONGODB_URI=${SPRING_DATA_MONGODB_URI}  # Loaded from .env or environment
     depends_on:
       - mongo                        # Ensure MongoDB starts first
     networks:
