@@ -43,7 +43,7 @@ public class InventoryController {
      *
      * @param request an {@code InventoryRequest} containing the product ID and quantity
      */
-    @PostMapping
+    @PostMapping({"", "/"})
     public void createOrUpdate(@RequestBody InventoryRequest request){
         service.createOrUpdateStock(request.productId(), request.quantity());
     }
