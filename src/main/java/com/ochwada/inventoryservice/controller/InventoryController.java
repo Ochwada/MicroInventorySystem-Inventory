@@ -48,4 +48,5 @@ public class InventoryController {
         service.createOrUpdateStock(request.productId(), request.quantity());
     }
 
+
 }
